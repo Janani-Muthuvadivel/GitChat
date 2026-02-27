@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign In</title>
+<script src = "login.js" defer></script>
+
+<style>
+:root{
+    --primary:#339DFF;
+    --light:#EDF6FF;
+    --border:#cfe7ff;
+}
+
+*{
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    margin:0;
+    height:100vh;
+    background:
+        linear-gradient(120deg, #ffffff, var(--light)),
+        radial-gradient(circle at top right, #d6ecff, transparent 60%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* CARD */
+.card{
+    width:420px;
+    background:#fff;
+    border-radius:16px;
+    padding:32px 34px 36px;
+    box-shadow:
+        0 20px 45px rgba(51,157,255,0.25),
+        inset 0 0 0 2px var(--border);
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    margin-bottom:28px;
+}
+
+.header img{
+    width:48px;
+    margin-bottom:10px;
+}
+
+.header h1{
+    margin:0;
+    font-size:24px;
+    color:var(--primary);
+}
+
+.header p{
+    margin-top:6px;
+    font-size:14px;
+    color:#475569;
+}
+
+/* FIELDS */
+.field{
+    margin-bottom:18px;
+}
+
+.field label{
+    display:block;
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.input-wrapper{
+    position:relative;
+}
+
+.input-wrapper input{
+    width:100%;
+    padding:12px 14px 12px 42px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    font-size:14px;
+}
+
+.input-wrapper input:focus{
+    outline:none;
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(51,157,255,0.15);
+}
+
+.icon{
+    position:absolute;
+    left:12px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:16px;
+    color:#64748b;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:26px;
+    width:100%;
+    padding:14px;
+    border-radius:28px;
+    text-align:center;
+    font-weight:600;
+    color:white;
+    cursor:pointer;
+    background:linear-gradient(135deg, var(--primary), #1d78d6);
+    box-shadow:0 8px 20px rgba(51,157,255,0.35);
+}
+
+.btn:hover{
+    opacity:0.95;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="header">
+        <!-- Replace logo if needed -->
+        <img src= "images/GitChatlogo.png"/>
+        <h1>GitChat</h1>
+        <p>Access the files for i18n process</p>
+    </div>
+
+    <div class="field">
+        <label>Email or Username</label>
+        <div class="input-wrapper">
+            <span class="icon">✉️</span>
+            <input type="text" placeholder="Enter your email or username" id="username">
+        </div>
+    </div>
+
+    <div class="field">
+        <label>Password</label>
+        <div class="input-wrapper">
+            <span class="icon">🔒</span>
+            <input type="password" placeholder="Enter your password" id="password">
+        </div>
+    </div>
+
+    <div class="btn" id="loginBtn">
+        Log In
+    </div>
+
+</div>
+
+</body>
+</html>

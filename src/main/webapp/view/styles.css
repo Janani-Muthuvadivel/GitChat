@@ -1,0 +1,124 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #eaf5ff 50%,
+        #d9eeff 100%
+    );
+    color: #1f2d3d;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 64px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #339DFF;
+}
+
+.logo img{
+	height:50px;
+	width:50px;
+}
+
+.logo-icon {
+    font-size: 26px;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #339DFF;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #1e8ef7;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #339DFF;
+    border: 2px solid #339DFF;
+    padding: 8px 22px;
+    border-radius: 24px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    background: rgba(51, 157, 255, 0.08);
+}
+
+/* Page Wrapper (THIS is the key change) */
+.page-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 24px;
+}
+
+/* Hero Content */
+.hero {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 0 auto 36px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4a5b6b;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #5f6f82;
+}

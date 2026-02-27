@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="VendorPage.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" 
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=upload,upload_file"/>
+    <script src="https://kit.fontawesome.com/18f29dcdf8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Navigation -->
+    <div class="navigationBar">
+        <div id="imageAndTitle">
+            <img src="images/GitChatlogo.png" height="80rem">
+            <div id="titleName">
+                <h3>GitChat</h3>
+                <p>One Bot, Complete i18n flow</p>
+            </div>
+        </div>
+
+        <div id="switchVendorSession">
+            <button id="switchVendor" onclick="goToLogin()">
+                <i class="fa-solid fa-user"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <h1></h1>
+		
+	    <!-- Filters -->
+	    <div class="filterSection">
+	    
+	    	<input type="text" id="searchInput" placeholder="Search by file name or ID..." />
+		    
+	        <select id="statusFilter">
+	            <option value="ALL">All files</option>
+	            <option value="Pending">Pending</option>
+	            <option value="Translated">Translated</option>
+	        </select>
+	
+	        <!-- <select id="dateFilter">
+	        	<option value="OLDEST">Oldest First</option>
+	        	<option value="NEWEST">Newest First</option>
+	        	
+	        </select> -->
+	        <input type="date" id="fromDate" placeholder="Starting date">
+	      
+	        <input type="date" id="toDate" placeholder="Ending date">
+	        
+	    </div>
+	</div>
+    <!-- Table -->
+    <div id="tableSection">
+    <div id = "emptyRecordIndication">
+    </div>
+    <table class="tableContent" id="dataOfTable">
+        <thead>
+            <tr>
+                <th>FILE ID</th>
+                <th>NAME</th>
+                <th>SUBMITTED AT</th>
+                <th>MESSAGE</th>
+                <th>TRANSLATION FILE</th>
+                <th>LANGUAGES</th>
+                <th>STATUS</th>
+                <th>UPLOAD FILES</th>
+            </tr>
+            <!-- dummy data -->
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+    </div>
+
+</div>
+
+<!-- Overlay -->
+<div id="overlay">
+    <div class="modal">
+        <div class="modal-header">
+            <h2>Upload The File</h2>
+            <span id="close" onclick="closeModal()">
+                <i class="fa-solid fa-x"></i>
+            </span>
+        </div>
+
+        <div class="modal-body">
+            <div class="drop-area">
+                <!-- <span id="fileUploadIcon" class="material-symbols-outlined">
+                    upload_file
+                </span> -->
+                <svg xmlns="http://www.w3.org/2000/svg" height="4.5rem" viewBox="0 -960 960 960" width="4.rrem" fill="#1f1f1f"><path d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
+                
+
+                <h2 id="titleText">Upload your file here</h2>
+                <p id="descText">Drop the zip file</p>
+
+                <label for="fileInput" id="fileLabel">Choose File</label>
+                <input id="fileInput" type="file" accept=".zip"/>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button id="cancel" onclick="closeFile()">Clear</button>
+            <button id="submit" onclick="uploadFile()">Submit</button>
+        </div>
+    </div>
+    </div>
+
+<script>
+    function openModal(){
+        document.getElementById("overlay").style.display = "flex";
+    }
+    function closeModal(){
+    	document.getElementById("fileInput").value = "";
+    	document.getElementById("fileLabel").innerText = "Choose File";
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("titleText").innerText = "Upload your file here";
+        document.getElementById("descText").innerText = "Drop the zip file";
+    }
+    function closeFile(){
+    	document.getElementById("titleText").innerText = "Upload your file here";
+        document.getElementById("descText").innerText = "Drop the zip file";
+    	document.getElementById("fileLabel").innerText = "Choose File";
+    	document.getElementById("fileInput").value = "";
+    }
+</script>
+<script src = "vendorPage.js"></script>
+</body>
+</html>
