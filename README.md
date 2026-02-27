@@ -2,8 +2,6 @@
 **i18n simplified**
 <br><br>
 
----
-
 ## 📌 Overview
 
 **GitChat** is a Zoho Cliq bot designed to simplify and automate the internationalization (i18n) workflow for software development teams. It eliminates the need for manual coordination between developers and translation vendors by providing a structured, form-based request system with built-in validation, seamless GitLab integration for version control, and AI-powered instant translation through Zia — enabling a faster, more reliable, and fully streamlined localization process from request to delivery.
